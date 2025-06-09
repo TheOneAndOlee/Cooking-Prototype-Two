@@ -1,24 +1,62 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvysfo7jt3g38"]
+[gd_scene load_steps=9 format=3 uid="uid://bvysfo7jt3g38"]
 
 [ext_resource type="PackedScene" uid="uid://d1xjm82mo6jec" path="res://Scenes/player.tscn" id="1_i8jxr"]
 [ext_resource type="PackedScene" uid="uid://di446do6rqkan" path="res://Scenes/GrassPatch.tscn" id="2_2ws6e"]
+[ext_resource type="ArrayMesh" uid="uid://bknyfh8waeiaf" path="res://kenney_survival-kit/Models/OBJ format/campfire-pit.obj" id="3_4ei1k"]
+[ext_resource type="Script" uid="uid://bv7jhfjea7rgh" path="res://Scenes/campfire.gd" id="3_blvju"]
+[ext_resource type="ArrayMesh" uid="uid://cevd0766m1sho" path="res://kenney_survival-kit/Models/OBJ format/campfire-fishing-stand.obj" id="4_11tur"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xtdbf"]
 height = 1.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_blvju"]
+size = Vector3(0.398003, 0.281097, 0.238892)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_blvju"]
+radius = 0.440779
+
 [node name="TestEnvironment" type="StaticBody3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.908136, 0.418676, 0, -0.418676, 0.908136, 0, 2.92237, 2.8665)
+transform = Transform3D(0.767825, 0.268229, -0.581806, 3.13902e-08, 0.908136, 0.418676, 0.640659, -0.32147, 0.69729, 0, 4.78901, 5.37716)
 light_energy = 3.0
 sky_mode = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DirectionalLight3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.715565, 0.844512)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0354179, -0.0605054)
 mesh = SubResource("CapsuleMesh_xtdbf")
 
 [node name="Player" parent="." instance=ExtResource("1_i8jxr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.21398, 1.5638)
 
-[node name="StaticBody3D" parent="." instance=ExtResource("2_2ws6e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+[node name="Grass" parent="." instance=ExtResource("2_2ws6e")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1, 0, 0.950824)
+
+[node name="Campfire" type="StaticBody3D" parent="."]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 2.90852, 0.0407186, 3.79575)
+script = ExtResource("3_blvju")
+
+[node name="CampfireMesh" type="MeshInstance3D" parent="Campfire"]
+mesh = ExtResource("3_4ei1k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Campfire"]
+mesh = ExtResource("4_11tur")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Campfire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00282669, 0.134567, 0.0067749)
+shape = SubResource("BoxShape3D_blvju")
+
+[node name="Area3D" type="Area3D" parent="Campfire"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Campfire/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0150032, -0.00790644, -0.000468135)
+shape = SubResource("SphereShape3D_blvju")
+
+[node name="Label3D" type="Label3D" parent="Campfire/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.380026, 0)
+visible = false
+billboard = 2
+text = "E to Cook"
+
+[connection signal="body_entered" from="Campfire/Area3D" to="Campfire" method="on_body_entered"]
+[connection signal="body_exited" from="Campfire/Area3D" to="Campfire" method="on_body_exited"]
