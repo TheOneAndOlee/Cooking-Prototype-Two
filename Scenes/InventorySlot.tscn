@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://dayh0k4wqp7ke"]
+
+[ext_resource type="Script" uid="uid://duqt428kkxchk" path="res://Scenes/inventory_slot.gd" id="1_8bubk"]
+[ext_resource type="Texture2D" uid="uid://b6x4ojvolkwm" path="res://ImageTextures/spell-book.png" id="1_aw7i0"]
+[ext_resource type="FontFile" uid="uid://cqs2p2rmr8bfn" path="res://Fonts/DepartureMono-Regular.otf" id="2_8bubk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixqpn"]
+bg_color = Color(0.733005, 0.733005, 0.733005, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbm7r"]
+bg_color = Color(0.340339, 0.340339, 0.340339, 1)
+
+[node name="BackgroundPanel" type="Panel"]
+offset_right = 256.0
+offset_bottom = 256.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ixqpn")
+script = ExtResource("1_8bubk")
+
+[node name="ForegroundPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 248.0
+offset_bottom = 248.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hbm7r")
+
+[node name="ItemTexture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 248.0
+offset_bottom = 248.0
+texture = ExtResource("1_aw7i0")
+expand_mode = 1
+
+[node name="ItemCount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 215.0
+offset_top = -37.0
+offset_right = 295.0
+offset_bottom = 43.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_8bubk")
+theme_override_font_sizes/font_size = 62
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1

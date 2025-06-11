@@ -13,6 +13,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 #Locks Camera and Hides Cursor
 func _ready():
+	add_to_group("player")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 #Rotate Body and Cameras

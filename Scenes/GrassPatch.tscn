@@ -23,12 +23,16 @@ shape = SubResource("BoxShape3D_djv3j")
 
 [node name="grass-large" parent="." instance=ExtResource("2_djv3j")]
 transform = Transform3D(1.1522, 0, 0, 0, 1, 0, 0, 0, 1.19145, -0.032086, 0, -0.154107)
+visible = false
 
 [node name="grass-large4" parent="." instance=ExtResource("2_djv3j")]
 transform = Transform3D(1.1522, 0, 0, 0, 1, 0, 0, 0, 1.19145, 0.385456, 0, -0.0232933)
+visible = false
 
 [node name="grass-large2" parent="." instance=ExtResource("2_djv3j")]
 transform = Transform3D(1.82313, 0, 0, 0, 1, 0, 0, 0, 1.43329, -0.0687292, 0, 0.496639)
+visible = false
 
 [node name="grass-large3" parent="." instance=ExtResource("2_djv3j")]
 transform = Transform3D(0.985557, 0, -0.723326, 0, 1.28633, 0, 0.810266, 0, 0.879808, 0.489402, 0, 0.654092)
+visible = false
