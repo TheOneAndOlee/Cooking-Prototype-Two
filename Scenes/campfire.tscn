@@ -13,8 +13,6 @@ radius = 0.440779
 [node name="Campfire" type="StaticBody3D"]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 script = ExtResource("1_y2ey3")
-interactRadius = null
-cookingTime = null
 
 [node name="CampfireMesh" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_dk7h0")

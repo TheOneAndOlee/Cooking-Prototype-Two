@@ -7,7 +7,7 @@ extends StaticBody3D
 
 var canCook = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if (canCook == true) and Input.is_action_just_pressed("Interact"):
 		print("Open Cooking Menu!")
 		#ActivateCookingMenu()
