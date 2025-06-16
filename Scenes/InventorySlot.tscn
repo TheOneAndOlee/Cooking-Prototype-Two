@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dayh0k4wqp7ke"]
 
-[ext_resource type="Script" uid="uid://duqt428kkxchk" path="res://Scenes/inventory_slot.gd" id="1_8bubk"]
-[ext_resource type="Texture2D" uid="uid://b6x4ojvolkwm" path="res://ImageTextures/spell-book.png" id="1_aw7i0"]
-[ext_resource type="FontFile" uid="uid://cqs2p2rmr8bfn" path="res://Fonts/DepartureMono-Regular.otf" id="2_8bubk"]
+[ext_resource type="Script" uid="uid://duqt428kkxchk" path="res://scenes/inventory_slot.gd" id="1_8bubk"]
+[ext_resource type="Texture2D" uid="uid://b6x4ojvolkwm" path="res://texture2D/spell-book.png" id="1_aw7i0"]
+[ext_resource type="FontFile" uid="uid://cqs2p2rmr8bfn" path="res://fonts/DepartureMono-Regular.otf" id="2_8bubk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixqpn"]
 bg_color = Color(0.733005, 0.733005, 0.733005, 1)

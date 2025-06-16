@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="item_data" load_steps=3 format=3 uid="uid://bs53u2jpqnfh7"]
+
+[ext_resource type="Script" uid="uid://jlmvsuku2ka1" path="res://resources/item_data.gd" id="1_3jaqe"]
+[ext_resource type="Texture2D" uid="uid://87hramjxt066" path="res://texture2D/Apple.png" id="2_jvysn"]
+
+[resource]
+script = ExtResource("1_3jaqe")
+name = "Red Apple"
+texture = ExtResource("2_jvysn")
+count = 1
+stackable = true
+categories = {
+"Apple": 100,
+"Fruit": 1,
+"Sweet": 1.0
+}
+traits = {
+"Heal": 2.0
+}
+metadata/_custom_type_script = "uid://jlmvsuku2ka1"

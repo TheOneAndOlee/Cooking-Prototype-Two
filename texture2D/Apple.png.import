@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6x4ojvolkwm"
-path="res://.godot/imported/spell-book.png-b3b4a02f8ca79bc07e78e3dcca387327.ctex"
+uid="uid://87hramjxt066"
+path="res://.godot/imported/Apple.png-6dcdbb676d0743cd09e7beec097542b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ImageTextures/spell-book.png"
-dest_files=["res://.godot/imported/spell-book.png-b3b4a02f8ca79bc07e78e3dcca387327.ctex"]
+source_file="res://texture2D/Apple.png"
+dest_files=["res://.godot/imported/Apple.png-6dcdbb676d0743cd09e7beec097542b4.ctex"]
 
 [params]
 

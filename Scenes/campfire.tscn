@@ -1,8 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cnhqs5nr0ers8"]
 
-[ext_resource type="Script" uid="uid://bv7jhfjea7rgh" path="res://Scenes/campfire.gd" id="1_y2ey3"]
+[ext_resource type="Script" uid="uid://bv7jhfjea7rgh" path="res://scenes/campfire.gd" id="1_y2ey3"]
 [ext_resource type="ArrayMesh" uid="uid://bknyfh8waeiaf" path="res://kenney_survival-kit/Models/OBJ format/campfire-pit.obj" id="2_dk7h0"]
 [ext_resource type="ArrayMesh" uid="uid://cevd0766m1sho" path="res://kenney_survival-kit/Models/OBJ format/campfire-fishing-stand.obj" id="3_t2ea5"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_blvju"]
 size = Vector3(0.398003, 0.281097, 0.238892)
