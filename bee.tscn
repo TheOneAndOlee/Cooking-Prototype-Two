@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://cade3pyp00vb6"]
+
+[ext_resource type="PackedScene" uid="uid://3ucryx8jku7p" path="res://Enemies/glTF/Bee.gltf" id="1_xww1r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v5qog"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q8d8k"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hoj8b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b1nx6"]
+
+[node name="Bee" instance=ExtResource("1_xww1r")]
+
+[node name="Skeleton3D" parent="MonsterArmature" index="0"]
+bones/2/position = Vector3(0, 0.483194, 0)
+bones/4/rotation = Quaternion(0, 3.54715e-10, -0.00264005, 0.999997)
+bones/6/rotation = Quaternion(-0.0304421, -0.0756972, -0.371872, 0.924692)
+bones/8/rotation = Quaternion(-0.0304421, 0.0756972, 0.371872, 0.924692)
+
+[node name="PhysicalBoneSimulator3D" type="PhysicalBoneSimulator3D" parent="MonsterArmature/Skeleton3D" index="1"]
+
+[node name="Physical Bone Head" type="PhysicalBone3D" parent="MonsterArmature/Skeleton3D/PhysicalBoneSimulator3D" index="0"]
+transform = Transform3D(1, -7.92002e-26, 5.68687e-24, 5.68687e-24, 9.69158e-09, -1, 7.92002e-26, 1, 9.69158e-09, 9.30772e-23, 0.751809, -3.95075e-08)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.46048e-23, 3.69042e-08, 0.268615)
+body_offset = Transform3D(1, -7.92002e-26, 5.68687e-24, 5.68687e-24, 9.69158e-09, -1, 7.92002e-26, 1, 9.69158e-09, 9.30772e-23, 0.268615, -3.95075e-08)
+bone_name = "Head"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MonsterArmature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Head" index="0"]
+transform = Transform3D(1.325, 0, 0, 0, -5.79176e-08, 1.325, 0, -1.325, -5.79176e-08, 0, 0, -0.0672902)
+shape = SubResource("BoxShape3D_v5qog")
+
+[node name="Physical Bone Wing1_L" type="PhysicalBone3D" parent="MonsterArmature/Skeleton3D/PhysicalBoneSimulator3D" index="1"]
+transform = Transform3D(0.422784, 4.43073e-07, -0.906231, -0.906231, 9.17718e-07, -0.422784, 6.4434e-07, 1, 7.89523e-07, 0.528915, 0.689632, -0.0451935)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00935089, -1.29769e-06, 0.0946429)
+body_offset = Transform3D(1, -2.32868e-07, 2.563e-06, 2.563e-06, 1.08643e-07, -1, 2.32868e-07, 1, 1.08644e-07, -0.00935113, 0.0946429, 1.28523e-06)
+bone_name = "Wing1.L"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MonsterArmature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Wing1_L" index="0"]
+transform = Transform3D(0.429623, 0.0180065, 7.82947e-10, 4.12115e-12, -1.87966e-08, 0.43, 0.0180065, -0.429623, -1.87803e-08, -0.59237, 0.0424044, 1.38207)
+shape = SubResource("CapsuleShape3D_q8d8k")
+
+[node name="Physical Bone Wing1_R" type="PhysicalBone3D" parent="MonsterArmature/Skeleton3D/PhysicalBoneSimulator3D" index="2"]
+transform = Transform3D(0.422784, -4.43073e-07, 0.906231, 0.906231, 9.17718e-07, -0.422784, -6.4434e-07, 1, 7.89523e-07, -0.528915, 0.689632, -0.0451935)
+joint_type = 1
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00935089, -1.29769e-06, 0.0946429)
+body_offset = Transform3D(1, 2.32868e-07, -2.563e-06, -2.563e-06, 1.08643e-07, -1, -2.32868e-07, 1, 1.08644e-07, 0.00935113, 0.0946429, 1.28523e-06)
+bone_name = "Wing1.R"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MonsterArmature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Wing1_R" index="0"]
+transform = Transform3D(0.427314, -0.0479913, -4.1301e-08, 3.69961e-08, -4.06421e-08, 0.43, -0.0479913, -0.427314, -3.62593e-08, 0.549486, 0.0499931, 1.38249)
+shape = SubResource("CapsuleShape3D_hoj8b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1.325, 0, 0, 0, 1.325, 0, 0, 0, 1.325, 0, 0.793652, 0)
+shape = SubResource("BoxShape3D_b1nx6")

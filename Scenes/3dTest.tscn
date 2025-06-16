@@ -15,7 +15,6 @@ albedo_color = Color(0, 0.894118, 0, 1)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.767825, 0.268229, -0.581806, 3.13902e-08, 0.908136, 0.418676, 0.640659, -0.32147, 0.69729, -7.45991, 4.78901, 13.775)
 light_energy = 3.995
-sky_mode = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DirectionalLight3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0354179, -0.0605054)
