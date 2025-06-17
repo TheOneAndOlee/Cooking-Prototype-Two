@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bvysfo7jt3g38"]
 
-[ext_resource type="PackedScene" uid="uid://d1xjm82mo6jec" path="res://Scenes/player.tscn" id="1_i8jxr"]
-[ext_resource type="PackedScene" uid="uid://di446do6rqkan" path="res://Scenes/GrassPatch.tscn" id="2_2ws6e"]
-[ext_resource type="PackedScene" uid="uid://cnhqs5nr0ers8" path="res://Scenes/campfire.tscn" id="3_4ei1k"]
+[ext_resource type="PackedScene" uid="uid://d1xjm82mo6jec" path="res://scenes/player.tscn" id="1_i8jxr"]
+[ext_resource type="PackedScene" uid="uid://di446do6rqkan" path="res://scenes/GrassPatch.tscn" id="2_2ws6e"]
+[ext_resource type="PackedScene" uid="uid://cnhqs5nr0ers8" path="res://scenes/campfire.tscn" id="3_4ei1k"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xtdbf"]
 height = 1.0
