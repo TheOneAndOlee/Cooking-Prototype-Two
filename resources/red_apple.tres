@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="item" load_steps=3 format=3 uid="uid://crhl3fdqnu6f0"]
+
+[ext_resource type="Script" uid="uid://xbuew36pq58k" path="res://resources/item.gd" id="1_3jaqe"]
+[ext_resource type="Texture2D" uid="uid://bxifvb2ms2jkk" path="res://ImageTextures/Apple.png" id="2_jvysn"]
+
+[resource]
+script = ExtResource("1_3jaqe")
+name = "Red Apple"
+description = "A shiny red apple. The 2D texture looks pretty bad, I wonder who made it?"
+count = 6
+texture = ExtResource("2_jvysn")
+stackable = true
+categories = Dictionary[String, int]({
+"Apple": 100,
+"Fruit": 1,
+"Sweet": 1
+})
+traits = Dictionary[String, float]({})
+metadata/_custom_type_script = "uid://xbuew36pq58k"
