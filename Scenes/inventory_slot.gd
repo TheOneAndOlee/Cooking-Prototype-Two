@@ -13,33 +13,37 @@ var tween_rot: Tween
 
 func _ready():
 	pivot_offset = size/2.0
-	
 	update_slot()
-	var apple = load("res://resources/items/red_apple.tres")
-	set_item(apple)
 
 func update_slot() -> void:
-	if (!item):
-		print("Item not found! Is this a bug?")
-	else:
+	if (item and item.count != 0):
 		print("Item found!")
 		texture.texture = item.texture
 		count.text = str(item.count)
-		
-		set_visibility(true)
-
-func set_visibility(visibility : bool):
-	if item.count == 0:
+		count.visible = true
+		texture.visible = true
+	else:
+		print("Item not found!")
+		texture.visible = false
 		count.visible = false
-	texture.visible = visibility
+		if item and (item.count == 0):
+			item = null
+		
 
 func set_item(to_set: Resource):
+	#if to_set == null:
+		#item.count = 0
 	self.item = to_set
 	update_slot()
 
 func click_interaction(event: InputEvent):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 		if item:
+			return
+
+func on_right_click(event: InputEvent):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.is_pressed():
+		if not item:
 			return
 
 func start_hover_animation() -> void:
@@ -100,7 +104,6 @@ func _can_drop_data(_at_position: Vector2, data) -> bool:
 	return data is Dictionary and data.has("item")
 
 func _drop_data(_at_position: Vector2, data):
-	print("Dropped ", item.name, " onto ", self.name)
 	var root_slot = data.root_slot
 	var dropped_item = data.item
 	
@@ -108,6 +111,15 @@ func _drop_data(_at_position: Vector2, data):
 		return
 	
 	var current_item = self.item
-	set_item(dropped_item)
 	
+	if (current_item and current_item.name == dropped_item.name):
+		current_item.count += dropped_item.count
+		print("Stacked ", item.name, ", from ", current_item.count - dropped_item.count, " to ", current_item.count)
+		root_slot.set_item(null)
+		update_slot()
+		return
+	
+	set_item(dropped_item)
 	root_slot.set_item(current_item)
+	update_slot()
+	print("Dropped ", item.name, " onto ", self.name)

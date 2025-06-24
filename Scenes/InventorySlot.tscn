@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dayh0k4wqp7ke"]
+[gd_scene load_steps=5 format=3 uid="uid://dayh0k4wqp7ke"]
 
-[ext_resource type="Script" uid="uid://duqt428kkxchk" path="res://scenes/inventory_slot.gd" id="1_8bubk"]
-[ext_resource type="Texture2D" uid="uid://b6x4ojvolkwm" path="res://ImageTextures/spell-book.png" id="1_aw7i0"]
-[ext_resource type="FontFile" uid="uid://cqs2p2rmr8bfn" path="res://fonts/DepartureMono-Regular.otf" id="2_8bubk"]
+[ext_resource type="Script" uid="uid://duqt428kkxchk" path="res://Scenes/inventory_slot.gd" id="1_8bubk"]
+[ext_resource type="FontFile" uid="uid://cqs2p2rmr8bfn" path="res://Fonts/DepartureMono-Regular.otf" id="2_8bubk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixqpn"]
 bg_color = Color(0.733005, 0.733005, 0.733005, 1)
@@ -11,53 +10,53 @@ bg_color = Color(0.733005, 0.733005, 0.733005, 1)
 bg_color = Color(0.340339, 0.340339, 0.340339, 1)
 
 [node name="InventorySlot" type="Control"]
-custom_minimum_size = Vector2(256, 256)
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 32.0
-offset_top = 30.0
-offset_right = 288.0
-offset_bottom = 286.0
+offset_right = 128.0
+offset_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_8bubk")
 transition_type = 10
 transition_duration = 0.3
 
 [node name="ContentContainer" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 256.0
-offset_bottom = 256.0
+offset_right = 128.0
+offset_bottom = 128.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_ixqpn")
 
 [node name="ForegroundPanel" type="Panel" parent="ContentContainer"]
 layout_mode = 0
 offset_left = 7.0
-offset_top = 8.0
-offset_right = 247.0
-offset_bottom = 248.0
+offset_top = 7.0
+offset_right = 121.0
+offset_bottom = 121.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_hbm7r")
 
 [node name="ItemTexture" type="TextureRect" parent="ContentContainer"]
 layout_mode = 0
 offset_left = 7.0
-offset_top = 9.0
-offset_right = 247.0
-offset_bottom = 249.0
+offset_top = 7.0
+offset_right = 121.0
+offset_bottom = 121.0
 mouse_filter = 2
-texture = ExtResource("1_aw7i0")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="ItemCount" type="RichTextLabel" parent="ContentContainer"]
 layout_mode = 0
-offset_left = 210.0
+offset_left = 85.0
 offset_top = -30.0
-offset_right = 290.0
+offset_right = 165.0
 offset_bottom = 50.0
 mouse_filter = 2
-theme_override_constants/outline_size = 20
+theme_override_constants/outline_size = 12
 theme_override_fonts/normal_font = ExtResource("2_8bubk")
-theme_override_font_sizes/normal_font_size = 62
+theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "1"
 horizontal_alignment = 1
