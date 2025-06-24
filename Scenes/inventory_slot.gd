@@ -112,14 +112,26 @@ func _drop_data(_at_position: Vector2, data):
 	
 	var current_item = self.item
 	
-	if (current_item and current_item.name == dropped_item.name):
-		current_item.count += dropped_item.count
-		print("Stacked ", item.name, ", from ", current_item.count - dropped_item.count, " to ", current_item.count)
-		root_slot.set_item(null)
-		update_slot()
-		return
-	
-	set_item(dropped_item)
-	root_slot.set_item(current_item)
-	update_slot()
-	print("Dropped ", item.name, " onto ", self.name)
+	#Check if theres an item in the end destination
+	if current_item:
+		#If they're the same item, stack them.
+		if (current_item.name == dropped_item.name):
+			var original_amount = current_item.count
+			var new_amount = dropped_item.count
+			
+			var end_amount = new_amount+original_amount
+			
+			current_item.count = end_amount
+			
+			print("Stacked ", item.name, ", from ", original_amount, " to ", current_item.count)
+			root_slot.set_item(null)
+			update_slot()
+			return
+		else:
+			print("Swapped ", current_item.name, " with ", dropped_item.name)
+			root_slot.set_item(current_item)
+			set_item(dropped_item)
+	else:
+		set_item(dropped_item.duplicate())
+		root_slot.set_item(current_item)
+		print("Dropped ", item.name, " onto ", self.name)
