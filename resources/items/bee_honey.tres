@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="item" load_steps=3 format=3 uid="uid://qlxohrw8a02t"]
+
+[ext_resource type="Script" uid="uid://xbuew36pq58k" path="res://resources/items/item.gd" id="1_ygphs"]
+[ext_resource type="Texture2D" uid="uid://ci7f2gnj6hteh" path="res://ImageTextures/Pixel_Art_Honey_Jar.png" id="2_p768m"]
+
+[resource]
+script = ExtResource("1_ygphs")
+name = "Bee Honey"
+description = "Honey from a bee. Was this obtained ethically?"
+count = 1
+texture = ExtResource("2_p768m")
+stackable = true
+categories = Dictionary[String, int]({
+"Honey": 100,
+"Sweet": 2
+})
+traits = Dictionary[String, float]({})
+metadata/_custom_type_script = "uid://xbuew36pq58k"
