@@ -49,10 +49,10 @@ stretch_mode = 5
 
 [node name="ItemCount" type="RichTextLabel" parent="ContentContainer"]
 layout_mode = 0
-offset_left = 85.0
-offset_top = -30.0
-offset_right = 165.0
-offset_bottom = 50.0
+offset_left = 9.0
+offset_top = -54.0
+offset_right = 242.0
+offset_bottom = 62.0
 mouse_filter = 2
 theme_override_constants/outline_size = 12
 theme_override_fonts/normal_font = ExtResource("2_8bubk")

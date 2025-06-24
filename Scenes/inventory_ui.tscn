@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxj5cii6a6qf8"]
+
+[ext_resource type="PackedScene" uid="uid://dayh0k4wqp7ke" path="res://Scenes/InventorySlot.tscn" id="1_vr5og"]
+[ext_resource type="Resource" uid="uid://crhl3fdqnu6f0" path="res://resources/items/red_apple.tres" id="2_brbew"]
+[ext_resource type="Resource" uid="uid://qlxohrw8a02t" path="res://resources/items/bee_honey.tres" id="3_7oojl"]
+
+[node name="InventoryUI" type="Control"]
+custom_minimum_size = Vector2(480, 360)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer"]
+layout_mode = 2
+ratio = 1.7778
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/AspectRatioContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 40
+columns = 6
+
+[node name="InventorySlot" parent="MarginContainer/AspectRatioContainer/GridContainer" instance=ExtResource("1_vr5og")]
+layout_mode = 2
+item = ExtResource("2_brbew")
+
+[node name="InventorySlot2" parent="MarginContainer/AspectRatioContainer/GridContainer" instance=ExtResource("1_vr5og")]
+layout_mode = 2
+item = ExtResource("2_brbew")
+
+[node name="InventorySlot3" parent="MarginContainer/AspectRatioContainer/GridContainer" instance=ExtResource("1_vr5og")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="MarginContainer/AspectRatioContainer/GridContainer" instance=ExtResource("1_vr5og")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="MarginContainer/AspectRatioContainer/GridContainer" instance=ExtResource("1_vr5og")]
+layout_mode = 2
+item = ExtResource("3_7oojl")
+
+[node name="InventorySlot6" parent="MarginContainer/AspectRatioContainer/GridContainer" instance=ExtResource("1_vr5og")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="MarginContainer/AspectRatioContainer/GridContainer" instance=ExtResource("1_vr5og")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="MarginContainer/AspectRatioContainer/GridContainer" instance=ExtResource("1_vr5og")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="MarginContainer/AspectRatioContainer/GridContainer" instance=ExtResource("1_vr5og")]
+layout_mode = 2
+item = ExtResource("2_brbew")
+
+[node name="InventorySlot10" parent="MarginContainer/AspectRatioContainer/GridContainer" instance=ExtResource("1_vr5og")]
+layout_mode = 2
+item = ExtResource("2_brbew")
+
+[node name="InventorySlot11" parent="MarginContainer/AspectRatioContainer/GridContainer" instance=ExtResource("1_vr5og")]
+layout_mode = 2
+
+[node name="InventorySlot12" parent="MarginContainer/AspectRatioContainer/GridContainer" instance=ExtResource("1_vr5og")]
+layout_mode = 2
+
+[node name="InventorySlot13" parent="MarginContainer/AspectRatioContainer/GridContainer" instance=ExtResource("1_vr5og")]
+layout_mode = 2
+item = ExtResource("2_brbew")
+
+[node name="InventorySlot14" parent="MarginContainer/AspectRatioContainer/GridContainer" instance=ExtResource("1_vr5og")]
+layout_mode = 2
+item = ExtResource("2_brbew")
+
+[node name="InventorySlot15" parent="MarginContainer/AspectRatioContainer/GridContainer" instance=ExtResource("1_vr5og")]
+layout_mode = 2
+
+[node name="InventorySlot16" parent="MarginContainer/AspectRatioContainer/GridContainer" instance=ExtResource("1_vr5og")]
+layout_mode = 2
+
+[node name="InventorySlot17" parent="MarginContainer/AspectRatioContainer/GridContainer" instance=ExtResource("1_vr5og")]
+layout_mode = 2
+item = ExtResource("3_7oojl")
+
+[node name="InventorySlot18" parent="MarginContainer/AspectRatioContainer/GridContainer" instance=ExtResource("1_vr5og")]
+layout_mode = 2
