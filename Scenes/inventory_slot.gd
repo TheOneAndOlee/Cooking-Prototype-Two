@@ -2,7 +2,7 @@ extends Control
 
 @onready var count = $ContentContainer/ItemCount
 @onready var texture = $ContentContainer/ItemTexture
-@onready var outline = $Outline
+@onready var outline = $ContentContainer
 
 @export var item: item
 
@@ -15,7 +15,7 @@ func _ready():
 	pivot_offset = size/2.0
 	
 	update_slot()
-	var apple = load("res://resources/red_apple.tres")
+	var apple = load("res://resources/items/red_apple.tres")
 	set_item(apple)
 
 func update_slot() -> void:
@@ -29,7 +29,8 @@ func update_slot() -> void:
 		set_visibility(true)
 
 func set_visibility(visibility : bool):
-	count.visible = visibility
+	if item.count == 0:
+		count.visible = false
 	texture.visible = visibility
 
 func set_item(to_set: Resource):
@@ -63,7 +64,7 @@ func end_hovering_animation() -> void:
 	tween_hover = create_tween().set_ease(Tween.EASE_OUT).set_trans(transition_type)
 	tween_hover.tween_property(self, "scale", Vector2.ONE, transition_duration)
 
-func _get_drag_data(at_position: Vector2):
+func _get_drag_data(_at_position: Vector2):
 	if not item:
 		return null
 	
@@ -95,10 +96,10 @@ func _get_drag_data(at_position: Vector2):
 	
 	return payload
 
-func _can_drop_data(at_position: Vector2, data) -> bool:
+func _can_drop_data(_at_position: Vector2, data) -> bool:
 	return data is Dictionary and data.has("item")
 
-func _drop_data(at_position: Vector2, data):
+func _drop_data(_at_position: Vector2, data):
 	print("Dropped ", item.name, " onto ", self.name)
 	var root_slot = data.root_slot
 	var dropped_item = data.item

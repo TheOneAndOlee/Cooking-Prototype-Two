@@ -13,8 +13,8 @@ dest_files=["res://.godot/imported/tree-tall.glb-7595c0eb122f98d15285d411fc207e2
 
 [params]
 
-nodes/root_type=""
-nodes/root_name=""
+nodes/root_type="StaticBody3D"
+nodes/root_name="GreenTree"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
