@@ -7,7 +7,7 @@
 script = ExtResource("1_3jaqe")
 name = "Red Apple"
 description = "A shiny red apple. The 2D texture looks pretty bad, I wonder who made it?"
-count = 6
+count = 1
 texture = ExtResource("2_jvysn")
 stackable = true
 categories = Dictionary[String, int]({

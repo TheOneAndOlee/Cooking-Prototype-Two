@@ -34,7 +34,7 @@ shape = SubResource("SphereShape3D_blvju")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.380026, 0)
 visible = false
 billboard = 2
-text = "E to Cook"
+text = "F to Cook"
 
 [connection signal="body_entered" from="Area3D" to="." method="on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="on_body_exited"]

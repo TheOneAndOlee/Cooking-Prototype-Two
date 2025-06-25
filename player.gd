@@ -24,11 +24,14 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var camera = $Head/Camera3D
 @onready var head = $Head
 
+@onready var inventory = $InventoryUI
+
 #Locks Camera and Hides Cursor
 func _ready():
 	stamina = base_stamina
 	add_to_group("player")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	inventory.visible = false
 
 #Rotate Body and Cameras
 func _unhandled_input(event: InputEvent):
@@ -36,6 +39,16 @@ func _unhandled_input(event: InputEvent):
 		head.rotate_y(-event.relative.x * mouse_sensitivity) 
 		camera.rotate_x(-event.relative.y * mouse_sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-89), deg_to_rad(89))
+	if Input.is_action_just_pressed("inventory"):
+		toggle_inventory()
+
+func toggle_inventory():
+	if inventory.visible == true:
+		inventory.visible = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	else:
+		inventory.visible = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _physics_process(delta):
 	if not is_on_floor():
