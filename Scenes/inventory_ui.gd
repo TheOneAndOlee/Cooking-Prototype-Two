@@ -12,3 +12,4 @@ func redraw_inventory():
 	for i in range(slots.size()):
 		var item_to_add = InventoryManager.items[i]
 		slots[i].set_item(item_to_add)
+		slots[i].update_slot()

@@ -49,9 +49,8 @@ transform = Transform3D(-1.26537, 0, 8.1625, 0, 8.26, 0, -8.1625, 0, -1.26537, 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.1248, 0)
 billboard = 1
 text = "TO DO LIST:
-Fix Apple Adding
-- Unsure if it's because of the tree code
-   or the inventory manager
+Fix Item Auto Stacking
+- In for loop w/ obtain_item
 Add item tooltip panel
 - Done in InventorySlot"
 font = ExtResource("7_i1kic")
