@@ -17,6 +17,11 @@ func obtain_item(to_set: item):
 			items[i] = to_set
 			inventory_changed.emit()
 			return true
+			
+		if items[i].name == to_set.name:
+			items[i].count += to_set.count
+			return true
+		
 	if overflow[0] == null:
 		print("No space in inventory! Adding it to overflow...")
 		overflow[0] = to_set

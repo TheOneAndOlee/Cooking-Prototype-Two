@@ -8,9 +8,6 @@ var canPick = false
 
 @export var apple: item
 
-func _ready() -> void:
-	InventoryManager.inventory_changed.connect(apple_get)
-
 func apple_get():
 	InventoryManager.obtain_item(apple.duplicate())
 
