@@ -17,20 +17,20 @@ func _ready():
 
 func update_slot() -> void:
 	if (item and item.count != 0):
-		print("Item found!")
+		#print("Item found!")
 		texture.texture = item.texture
 		count.text = str(item.count)
 		count.visible = true
 		texture.visible = true
 	else:
-		print("Item not found!")
+		#print("Item not found!")
 		texture.visible = false
 		count.visible = false
 		if item and (item.count == 0):
 			item = null
 		
 
-func set_item(to_set: Resource):
+func set_item(to_set: item):
 	#if to_set == null:
 		#item.count = 0
 	self.item = to_set
@@ -116,22 +116,18 @@ func _drop_data(_at_position: Vector2, data):
 	if current_item:
 		#If they're the same item, stack them.
 		if (current_item.name == dropped_item.name):
-			var original_amount = current_item.count
 			var new_amount = dropped_item.count
-			
-			var end_amount = new_amount+original_amount
-			
-			current_item.count = end_amount
-			
-			print("Stacked ", item.name, ", from ", original_amount, " to ", current_item.count)
 			root_slot.set_item(null)
+			
+			current_item.count += new_amount
+			
 			update_slot()
 			return
 		else:
 			print("Swapped ", current_item.name, " with ", dropped_item.name)
 			root_slot.set_item(current_item)
-			set_item(dropped_item)
+			set_item(dropped_item.duplicate())
 	else:
 		set_item(dropped_item.duplicate())
 		root_slot.set_item(current_item)
-		print("Dropped ", item.name, " onto ", self.name)
+		print("Dropped ", item.name, " into null slot")

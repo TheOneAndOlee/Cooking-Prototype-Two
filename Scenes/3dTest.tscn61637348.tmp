@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvysfo7jt3g38"]
+[gd_scene load_steps=7 format=3 uid="uid://bvysfo7jt3g38"]
 
 [ext_resource type="PackedScene" uid="uid://d1xjm82mo6jec" path="res://Scenes/player.tscn" id="1_i8jxr"]
-[ext_resource type="PackedScene" uid="uid://bxj5cii6a6qf8" path="res://Scenes/inventory_ui.tscn" id="2_0vjrf"]
 [ext_resource type="PackedScene" uid="uid://di446do6rqkan" path="res://Scenes/GrassPatch.tscn" id="2_2ws6e"]
 [ext_resource type="PackedScene" uid="uid://cnhqs5nr0ers8" path="res://Scenes/campfire.tscn" id="3_4ei1k"]
 [ext_resource type="PackedScene" uid="uid://v1403liathdq" path="res://Scenes/TallOrangeTree.tscn" id="4_exljm"]
@@ -21,8 +20,6 @@ sky_mode = 1
 [node name="Player" parent="." instance=ExtResource("1_i8jxr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.21398, 1.5638)
 
-[node name="InventoryUI" parent="Player" instance=ExtResource("2_0vjrf")]
-
 [node name="Grass" parent="." instance=ExtResource("2_2ws6e")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1, -2.28622, 0.950824)
 
@@ -37,6 +34,8 @@ size = Vector3(3, 0.001, 3)
 
 [node name="Tree" parent="." instance=ExtResource("4_exljm")]
 transform = Transform3D(7.59992, 0, 0, 0, 7.59992, 0, 0, 0, 7.59992, -6.36803, -0.0156409, -2.49638)
+interactRadius = null
+apple = null
 
 [node name="GreenTree" parent="." instance=ExtResource("5_nnvlp")]
 transform = Transform3D(6.44, 0, 0, 0, 6.44, 0, 0, 0, 6.44, 6.47797, -0.0156412, 10.5709)
