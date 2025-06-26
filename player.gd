@@ -83,8 +83,6 @@ func _physics_process(delta):
 	var target_fov = base_FOV + FOV_change * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
-	
-	
 	move_and_slide()
 
 func _headbob(time) -> Vector3:
