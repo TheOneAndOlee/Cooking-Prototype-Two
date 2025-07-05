@@ -47,11 +47,11 @@ func on_right_click(event: InputEvent):
 			return
 
 func start_hover_animation() -> void:
-	#print("Hovering on item: ", item.name)
+	#print("Hovering on item: ")
 	if tween_hover and tween_hover.is_running():
 		tween_hover.kill()
 	tween_hover = create_tween().set_ease(Tween.EASE_OUT).set_trans(transition_type)
-	tween_hover.tween_property(self, "scale", Vector2(1.1, 1.1), transition_duration)
+	tween_hover.tween_property(self, "scale", Vector2(1.2, 1.2), transition_duration)
 	
 
 func end_hovering_animation() -> void:
@@ -84,19 +84,18 @@ func _get_drag_data(_at_position: Vector2):
 	preview_texture.size = texture.size
 	
 	var preview_count = count.duplicate()
-	preview_count.size = preview_texture.size / 2.0
-	preview_count.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	preview_count.vertical_alignment = VERTICAL_ALIGNMENT_TOP
+	preview_count.size = preview_texture.size
 	
 	preview_root.add_child(preview_texture)
-	preview_root.add_child(preview_count)
+	preview_texture.add_child(preview_count)
 	
-	preview_texture.position = -preview_texture.size / 2.0
-	preview_count.position = Vector2(0, -preview_texture.size.y / 2.0)
+	preview_root.pivot_offset = preview_texture.size / 2.0
+	
+	preview_count.position = Vector2(preview_texture.size.x / 3, preview_texture.size.y / 3.5)
 	
 	set_drag_preview(preview_root)
 	
-	print("Dragging item: ", item.name)
+	#print("Dragging item: ", item.name)
 	
 	return payload
 
@@ -124,10 +123,10 @@ func _drop_data(_at_position: Vector2, data):
 			update_slot()
 			return
 		else:
-			print("Swapped ", current_item.name, " with ", dropped_item.name)
+			#print("Swapped ", current_item.name, " with ", dropped_item.name)
 			root_slot.set_item(current_item)
 			set_item(dropped_item.duplicate())
 	else:
 		set_item(dropped_item.duplicate())
 		root_slot.set_item(current_item)
-		print("Dropped ", item.name, " into null slot")
+		#print("Dropped ", item.name, " into null slot")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvysfo7jt3g38"]
+[gd_scene load_steps=9 format=3 uid="uid://bvysfo7jt3g38"]
 
 [ext_resource type="PackedScene" uid="uid://d1xjm82mo6jec" path="res://scenes/player.tscn" id="1_i8jxr"]
 [ext_resource type="PackedScene" uid="uid://bxj5cii6a6qf8" path="res://scenes/inventory_ui.tscn" id="2_0vjrf"]
@@ -43,3 +43,17 @@ transform = Transform3D(6.44, 0, 0, 0, 6.44, 0, 0, 0, 6.44, 6.47797, -0.0156412,
 
 [node name="GreenTree2" parent="." instance=ExtResource("5_nnvlp")]
 transform = Transform3D(-1.26537, 0, 8.1625, 0, 8.26, 0, -8.1625, 0, -1.26537, 10.4105, -0.0156408, -9.03357)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.1248, 0)
+billboard = 1
+text = "TO DO LIST:
+Fix Item Auto Stacking
+- In for loop w/ obtain_item
+Add item tooltip panel
+- Done in InventorySlot"
+font = ExtResource("7_i1kic")
+font_size = 256
+outline_size = 62
+horizontal_alignment = 0
+vertical_alignment = 0
