@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="item" load_steps=3 format=3 uid="uid://d23inqoivnosy"]
+
+[ext_resource type="Script" uid="uid://xbuew36pq58k" path="res://resources/items/item.gd" id="1_l7pxw"]
+[ext_resource type="Texture2D" uid="uid://ch7yoqjnww66k" path="res://ImageTextures/HamLeg.png" id="2_nrjir"]
+
+[resource]
+script = ExtResource("1_l7pxw")
+name = "Honey Ham"
+description = "A solid piece of ham, but why is the bone in? Interesting choice of ham."
+count = 1
+texture = ExtResource("2_nrjir")
+stackable = true
+categories = Dictionary[String, int]({
+"Meat": 3,
+"Sweet": 1
+})
+traits = Dictionary[String, float]({
+"Absorption": 1.0
+})
+metadata/_custom_type_script = "uid://xbuew36pq58k"

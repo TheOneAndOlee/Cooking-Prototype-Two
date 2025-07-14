@@ -9,7 +9,8 @@ func _ready() -> void:
 func redraw_inventory():
 	var slots = gridContainer.get_children()
 	
-	for i in range(slots.size()):
-		var item_to_add = InventoryManager.items[i]
-		slots[i].set_item(item_to_add)
-		slots[i].update_slot()
+	for i in range(InventoryManager.items.size()):
+		if (InventoryManager.items[i] != null):
+			slots[i].set_item(InventoryManager.items[i])
+			slots[i].update_slot()
+			

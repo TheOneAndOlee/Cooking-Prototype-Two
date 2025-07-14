@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvysfo7jt3g38"]
+[gd_scene load_steps=10 format=3 uid="uid://bvysfo7jt3g38"]
 
 [ext_resource type="PackedScene" uid="uid://d1xjm82mo6jec" path="res://scenes/player.tscn" id="1_i8jxr"]
 [ext_resource type="PackedScene" uid="uid://bxj5cii6a6qf8" path="res://scenes/inventory_ui.tscn" id="2_0vjrf"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cnhqs5nr0ers8" path="res://scenes/campfire.tscn" id="3_4ei1k"]
 [ext_resource type="PackedScene" uid="uid://v1403liathdq" path="res://scenes/TallOrangeTree.tscn" id="4_exljm"]
 [ext_resource type="PackedScene" uid="uid://y5aw7syoo7tn" path="res://scenes/TallGreenTree.tscn" id="5_nnvlp"]
+[ext_resource type="Resource" uid="uid://d23inqoivnosy" path="res://resources/items/honey_ham.tres" id="6_8nqhg"]
 [ext_resource type="FontFile" uid="uid://cqs2p2rmr8bfn" path="res://fonts/DepartureMono-Regular.otf" id="7_i1kic"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ei1k"]
@@ -38,6 +39,7 @@ size = Vector3(3, 0.001, 3)
 
 [node name="Tree" parent="." instance=ExtResource("4_exljm")]
 transform = Transform3D(7.59992, 0, 0, 0, 7.59992, 0, 0, 0, 7.59992, -6.36803, -0.0156409, -2.49638)
+ham = ExtResource("6_8nqhg")
 
 [node name="GreenTree" parent="." instance=ExtResource("5_nnvlp")]
 transform = Transform3D(6.44, 0, 0, 0, 6.44, 0, 0, 0, 6.44, 6.47797, -0.0156412, 10.5709)

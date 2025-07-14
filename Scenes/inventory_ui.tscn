@@ -146,8 +146,3 @@ layout_mode = 2
 
 [node name="InventorySlot24" parent="MarginContainer/AspectRatioContainer/GridContainer" instance=ExtResource("1_vr5og")]
 layout_mode = 2
-
-[node name="ItemDescriptorPanel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0

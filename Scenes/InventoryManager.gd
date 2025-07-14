@@ -13,13 +13,20 @@ func _init() -> void:
 
 func obtain_item(to_set: item):
 	for i in range(items.size()):
+		if (items[i] != null and items[i].name.strip_edges().to_lower() == to_set.name.strip_edges().to_lower()):
+				items[i].count += to_set.count
+				to_set.count = 0
+				inventory_changed.emit()
+	
+	#for i in range(items.size()):
+		#if items[i].name == to_set.name:
+			#items[i].count += to_set.count
+			#return true
+	
+	for i in range(items.size()):
 		if items[i] == null:
 			items[i] = to_set
 			inventory_changed.emit()
-			return true
-			
-		if items[i].name == to_set.name:
-			items[i].count += to_set.count
 			return true
 		
 	if overflow[0] == null:

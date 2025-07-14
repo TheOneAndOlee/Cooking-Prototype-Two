@@ -3,6 +3,10 @@ extends Control
 @onready var count = $ContentContainer/ItemCount
 @onready var texture = $ContentContainer/ItemTexture
 @onready var outline = $ContentContainer
+@onready var description = $ContentContainer/DescriptionBack
+@onready var descriptionFront = $ContentContainer/DescriptionBack/DescriptionFront
+@onready var descriptionText = $ContentContainer/DescriptionBack/DescriptionText
+@onready var descriptionLabel = $ContentContainer/DescriptionBack/DescriptionLabel
 
 @export var item: item
 
@@ -20,6 +24,8 @@ func update_slot() -> void:
 		#print("Item found!")
 		texture.texture = item.texture
 		count.text = str(item.count)
+		descriptionLabel.text = item.name
+		descriptionText.text = item.description
 		count.visible = true
 		texture.visible = true
 	else:
@@ -52,7 +58,20 @@ func start_hover_animation() -> void:
 		tween_hover.kill()
 	tween_hover = create_tween().set_ease(Tween.EASE_OUT).set_trans(transition_type)
 	tween_hover.tween_property(self, "scale", Vector2(1.2, 1.2), transition_duration)
+	if (item):
+		description.visible = true
+		resize_description(descriptionText.text.length() * 4)
 	
+
+func resize_description(size: int):
+	description.size.y = size / 1.35
+	descriptionFront.size.y = size / 1.39
+	descriptionText.size.y = size / 1.4
+	
+	description.size.x = size/3
+	descriptionLabel.size.x = size/3
+	descriptionFront.size.x = size/3.2
+	descriptionText.size.x = size/3
 
 func end_hovering_animation() -> void:
 	#print("Not hovering on item: ", item.name)
@@ -62,11 +81,12 @@ func end_hovering_animation() -> void:
 		#tween_rot.kill()
 	#tween_rot = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).set_parallel(true)
 	
-	#Reset Tween Scale
 	if tween_hover and tween_hover.is_running():
 		tween_hover.kill()
 	tween_hover = create_tween().set_ease(Tween.EASE_OUT).set_trans(transition_type)
 	tween_hover.tween_property(self, "scale", Vector2.ONE, transition_duration)
+	
+	description.visible = false
 
 func _get_drag_data(_at_position: Vector2):
 	if not item:

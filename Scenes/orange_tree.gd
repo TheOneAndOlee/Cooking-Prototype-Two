@@ -7,8 +7,13 @@ extends StaticBody3D
 var canPick = false
 
 @export var apple: item
+@export var ham: item
 
 func apple_get():
+	var num = randf()
+	if (num < 0.5):
+		InventoryManager.obtain_item(ham.duplicate())
+		return
 	InventoryManager.obtain_item(apple.duplicate())
 
 func _process(_delta: float) -> void:
