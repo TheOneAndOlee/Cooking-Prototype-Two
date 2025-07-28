@@ -6,26 +6,26 @@ var items = []
 var overflow = []
 
 func _init() -> void:
-	var inventory_size = 24
-	items.resize(inventory_size)
+	const INVENTORY_SIZE = 24
+	items.resize(INVENTORY_SIZE)
 	overflow.resize(1)
 	items.fill(null)
 
 func obtain_item(to_set: item):
 	for i in range(items.size()):
-		if (items[i] != null and items[i].name.strip_edges().to_lower() == to_set.name.strip_edges().to_lower()):
+		if (items[i] != null):
+			var current_name = items[i].name.strip_edges().to_lower()
+			var new_name = to_set.name.strip_edges().to_lower()
+			if (current_name == new_name):
 				items[i].count += to_set.count
 				to_set.count = 0
 				inventory_changed.emit()
-	
-	#for i in range(items.size()):
-		#if items[i].name == to_set.name:
-			#items[i].count += to_set.count
-			#return true
-	
+				return true
+		
 	for i in range(items.size()):
-		if items[i] == null:
+		if (items[i] == null):
 			items[i] = to_set
+			to_set.count = 0
 			inventory_changed.emit()
 			return true
 		

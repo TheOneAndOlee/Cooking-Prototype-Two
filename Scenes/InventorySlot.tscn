@@ -23,8 +23,6 @@ offset_bottom = 128.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_8bubk")
-transition_type = 5
-transition_duration = 0.4
 
 [node name="ContentContainer" type="Panel" parent="."]
 layout_mode = 0

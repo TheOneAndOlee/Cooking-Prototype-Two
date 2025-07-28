@@ -33,6 +33,9 @@ func update_slot() -> void:
 		texture.visible = false
 		count.visible = false
 		if item and (item.count == 0):
+			descriptionLabel.text = ""
+			descriptionText.text = ""
+			count.text = ""
 			item = null
 		
 
@@ -40,7 +43,6 @@ func set_item(to_set: item):
 	#if to_set == null:
 		#item.count = 0
 	self.item = to_set
-	update_slot()
 
 func click_interaction(event: InputEvent):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
